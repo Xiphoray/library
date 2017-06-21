@@ -21,17 +21,38 @@ namespace llibrary
         {
             if (textBox1.Text == "" && textBox2.Text == "")
             {
-                MessageBox.Show("未输入姓名及密码");
+                signoutfail signoutfail1 = new signoutfail();
+                signoutfail1.TopMost = true;
+                Point p = new Point(Screen.PrimaryScreen.WorkingArea.Width - signoutfail1.Width, Screen.PrimaryScreen.WorkingArea.Height - signoutfail1.Height);
+                signoutfail1.PointToScreen(p);
+                signoutfail1.Location = p;
+                signoutfail1.Enabled = true;
+                signoutfail1.station = 1;
+                signoutfail1.Show();
                 return;
             }
             else if (textBox1.Text == "")
             {
-                MessageBox.Show("未输入姓名");
+                signoutfail signoutfail1 = new signoutfail();
+                signoutfail1.TopMost = true;
+                Point p = new Point(Screen.PrimaryScreen.WorkingArea.Width - signoutfail1.Width, Screen.PrimaryScreen.WorkingArea.Height - signoutfail1.Height);
+                signoutfail1.PointToScreen(p);
+                signoutfail1.Location = p;
+                signoutfail1.Enabled = true;
+                signoutfail1.station = 2;
+                signoutfail1.Show();
                 return;
             }
             else if (textBox2.Text == "")
             {
-                MessageBox.Show("未输入密码");
+                signoutfail signoutfail1 = new signoutfail();
+                signoutfail1.TopMost = true;
+                Point p = new Point(Screen.PrimaryScreen.WorkingArea.Width - signoutfail1.Width, Screen.PrimaryScreen.WorkingArea.Height - signoutfail1.Height);
+                signoutfail1.PointToScreen(p);
+                signoutfail1.Location = p;
+                signoutfail1.Enabled = true;
+                signoutfail1.station = 3;
+                signoutfail1.Show();
                 return;
             }
         }
