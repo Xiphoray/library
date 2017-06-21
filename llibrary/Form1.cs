@@ -16,5 +16,11 @@ namespace llibrary
         {
             InitializeComponent();
         }
+
+        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            Form2 signout = new Form2();
+            signout.Show();
+        }
     }
 }
