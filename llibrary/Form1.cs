@@ -15,12 +15,15 @@ namespace llibrary
         public Form1()
         {
             InitializeComponent();
+            
         }
 
-        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        private void timer1_Tick(object sender, EventArgs e)
         {
-            Form2 signout = new Form2();
-            signout.Show();
+            timer1.Stop();
+            login a = new login();
+            a.Show();
+            this.Hide();
         }
     }
 }
