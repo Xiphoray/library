@@ -43,8 +43,8 @@ namespace llibrary
 
         private void button1_Click(object sender, EventArgs e)
         {
-            managermain r = new managermain();
-            r.Show();
+            //managermain r = new managermain();
+            //r.Show();
             readermain b = new readermain();
             b.Show();
             Dispose();                //释放资源
