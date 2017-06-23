@@ -21,6 +21,9 @@ namespace llibrary
         {
             groupBox1.Hide();
             groupBox2.Hide();
+            groupBox3.Hide();
+            groupBox4.Hide();
+            groupBox5.Hide();
         }
 
 
@@ -82,22 +85,22 @@ namespace llibrary
         private void anToolStripMenuItem_Click(object sender, EventArgs e)
         {
             allhide();
+            groupBox3.Show();
         }
 
         private void 借书ToolStripMenuItem_Click(object sender, EventArgs e)
         {
             allhide();
+            groupBox4.Show();
         }
 
         private void 还书ToolStripMenuItem_Click(object sender, EventArgs e)
         {
             allhide();
+            groupBox5.Show();
         }
 
-        private void 订购ToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            allhide();
-        }
+
 
         private void 关于ToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -107,8 +110,21 @@ namespace llibrary
 
         private void button2_Click(object sender, EventArgs e)
         {
-            infor d = new infor();
+            infor d = new infor("hehe","we","飞轮", "9787530655603","32","42",true);
             d.Show();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            infor d = new infor("hwfsfe", "wfds", "ee", "9787530655603", "12", "2", false);
+            d.Show();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            writersearch d = new writersearch(textBox3.Text);
+            d.Show();
+
         }
     }
 }
