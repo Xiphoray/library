@@ -99,6 +99,16 @@ namespace llibrary
             allhide();
         }
 
+        private void 关于ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            about q = new about();
+            q.Show();
+        }
 
+        private void button2_Click(object sender, EventArgs e)
+        {
+            infor d = new infor();
+            d.Show();
+        }
     }
 }

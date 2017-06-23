@@ -45,6 +45,8 @@ namespace llibrary
         {
             managermain r = new managermain();
             r.Show();
+            readermain b = new readermain();
+            b.Show();
             Dispose();                //释放资源
             Close();
         }

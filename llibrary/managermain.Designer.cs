@@ -38,11 +38,12 @@
             this.查看在录人员ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.设置ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.登出ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.退出系统ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.label1 = new System.Windows.Forms.Label();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.退出系统ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.关于ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -74,14 +75,14 @@
             // 添增新书ToolStripMenuItem
             // 
             this.添增新书ToolStripMenuItem.Name = "添增新书ToolStripMenuItem";
-            this.添增新书ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.添增新书ToolStripMenuItem.Size = new System.Drawing.Size(124, 22);
             this.添增新书ToolStripMenuItem.Text = "添增新书";
             this.添增新书ToolStripMenuItem.Click += new System.EventHandler(this.添增新书ToolStripMenuItem_Click);
             // 
             // 删减旧书ToolStripMenuItem
             // 
             this.删减旧书ToolStripMenuItem.Name = "删减旧书ToolStripMenuItem";
-            this.删减旧书ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.删减旧书ToolStripMenuItem.Size = new System.Drawing.Size(124, 22);
             this.删减旧书ToolStripMenuItem.Text = "删减旧书";
             this.删减旧书ToolStripMenuItem.Click += new System.EventHandler(this.删减旧书ToolStripMenuItem_Click);
             // 
@@ -97,14 +98,14 @@
             // 书籍信息ToolStripMenuItem
             // 
             this.书籍信息ToolStripMenuItem.Name = "书籍信息ToolStripMenuItem";
-            this.书籍信息ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.书籍信息ToolStripMenuItem.Size = new System.Drawing.Size(148, 22);
             this.书籍信息ToolStripMenuItem.Text = "书籍更新";
             this.书籍信息ToolStripMenuItem.Click += new System.EventHandler(this.书籍信息ToolStripMenuItem_Click);
             // 
             // 查看在录人员ToolStripMenuItem
             // 
             this.查看在录人员ToolStripMenuItem.Name = "查看在录人员ToolStripMenuItem";
-            this.查看在录人员ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.查看在录人员ToolStripMenuItem.Size = new System.Drawing.Size(148, 22);
             this.查看在录人员ToolStripMenuItem.Text = "查看在录人员";
             this.查看在录人员ToolStripMenuItem.Click += new System.EventHandler(this.查看在录人员ToolStripMenuItem_Click);
             // 
@@ -112,7 +113,8 @@
             // 
             this.设置ToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.登出ToolStripMenuItem,
-            this.退出系统ToolStripMenuItem});
+            this.退出系统ToolStripMenuItem,
+            this.关于ToolStripMenuItem});
             this.设置ToolStripMenuItem.Name = "设置ToolStripMenuItem";
             this.设置ToolStripMenuItem.Size = new System.Drawing.Size(60, 21);
             this.设置ToolStripMenuItem.Text = "▼ 设置";
@@ -123,6 +125,13 @@
             this.登出ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.登出ToolStripMenuItem.Text = "登出";
             this.登出ToolStripMenuItem.Click += new System.EventHandler(this.登出ToolStripMenuItem_Click);
+            // 
+            // 退出系统ToolStripMenuItem
+            // 
+            this.退出系统ToolStripMenuItem.Name = "退出系统ToolStripMenuItem";
+            this.退出系统ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.退出系统ToolStripMenuItem.Text = "退出系统";
+            this.退出系统ToolStripMenuItem.Click += new System.EventHandler(this.退出系统ToolStripMenuItem_Click);
             // 
             // label1
             // 
@@ -161,12 +170,12 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Visible = false;
             // 
-            // 退出系统ToolStripMenuItem
+            // 关于ToolStripMenuItem
             // 
-            this.退出系统ToolStripMenuItem.Name = "退出系统ToolStripMenuItem";
-            this.退出系统ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.退出系统ToolStripMenuItem.Text = "退出系统";
-            this.退出系统ToolStripMenuItem.Click += new System.EventHandler(this.退出系统ToolStripMenuItem_Click);
+            this.关于ToolStripMenuItem.Name = "关于ToolStripMenuItem";
+            this.关于ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.关于ToolStripMenuItem.Text = "关于";
+            this.关于ToolStripMenuItem.Click += new System.EventHandler(this.关于ToolStripMenuItem_Click);
             // 
             // managermain
             // 
@@ -213,5 +222,6 @@
         private System.Windows.Forms.ToolStripMenuItem 登出ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 查看在录人员ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 退出系统ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem 关于ToolStripMenuItem;
     }
 }
