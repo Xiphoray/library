@@ -130,7 +130,14 @@ namespace llibrary
         {
             if (e.KeyChar == (char)Keys.Enter)
             {
-                SendKeys.Send("{tab}");
+                if (textBox1.Text == "")
+                {
+                    SendKeys.Send("{tab}");
+                }
+                else
+                {
+                    this.button1_Click(sender, e);//触发button事件  
+                }
             }
         }
     }

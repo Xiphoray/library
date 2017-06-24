@@ -76,6 +76,10 @@ namespace llibrary
             {
                 label1.Text = "用户名已存在";
             }
+            else if(station == 8)
+            {
+                label1.Text = "书库内没有这本书";
+            }
             timer1.Start();
         }
     }
