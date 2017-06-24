@@ -72,6 +72,10 @@ namespace llibrary
             {
                 label1.Text = "注册失败，请重试";
             }
+            else if(station == 7)
+            {
+                label1.Text = "用户名已存在";
+            }
             timer1.Start();
         }
     }

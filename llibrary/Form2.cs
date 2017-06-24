@@ -63,14 +63,13 @@ namespace llibrary
                 using (SqlConnection conn = new SqlConnection(strconn))
                 {
                     conn.Open();
-                    int i = 0;
-                    SqlCommand dbquery = new SqlCommand();
-                    dbquery.Connection = conn;                         //插入数据（添增数据）
-                    string sql = "insert into people(pname,code,reader,brosum,nsum,csum) values('" + textBox1.Text + "','" + textBox2.Text + "','";
-                    sql += "1','0','0','4')";
-                    dbquery.CommandText = sql;
-                    i = dbquery.ExecuteNonQuery();
-                    if(i == 1)
+
+                    int j = 0;
+                    SqlCommand dbquery1 = new SqlCommand();
+                    dbquery1.Connection = conn;
+                    dbquery1.CommandText = "select COUNT(*) from people where pname = '" + textBox1.Text + "'";
+                    j = (int)dbquery1.ExecuteScalar();
+                    if (j >= 1)
                     {
                         signoutfail d = new signoutfail();
                         d.TopMost = true;
@@ -78,27 +77,47 @@ namespace llibrary
                         d.PointToScreen(p);
                         d.Location = p;
                         d.Enabled = true;
-                        d.station = 5;
+                        d.station = 7;
                         d.Show();
-                        Dispose();
-                        Close();
-                        return;
                     }
                     else
                     {
-                        signoutfail d = new signoutfail();
-                        d.TopMost = true;
-                        Point p = new Point(Screen.PrimaryScreen.WorkingArea.Width - d.Width, Screen.PrimaryScreen.WorkingArea.Height - d.Height);
-                        d.PointToScreen(p);
-                        d.Location = p;
-                        d.Enabled = true;
-                        d.station = 6;
-                        d.Show();
+                        int i = 0;
+                        SqlCommand dbquery = new SqlCommand();
+                        dbquery.Connection = conn;                         //插入数据（添增数据）
+                        string sql = "insert into people(pname,code,reader,brosum,nsum,csum) values('" + textBox1.Text + "','" + textBox2.Text + "','";
+                        sql += "1','0','0','4')";
+                        dbquery.CommandText = sql;
+                        i = dbquery.ExecuteNonQuery();
+                        if (i == 1)
+                        {
+                            signoutfail d = new signoutfail();
+                            d.TopMost = true;
+                            Point p = new Point(Screen.PrimaryScreen.WorkingArea.Width - d.Width, Screen.PrimaryScreen.WorkingArea.Height - d.Height);
+                            d.PointToScreen(p);
+                            d.Location = p;
+                            d.Enabled = true;
+                            d.station = 5;
+                            d.Show();
+                            Dispose();
+                            Close();
+                            return;
+                        }
+                        else
+                        {
+                            signoutfail d = new signoutfail();
+                            d.TopMost = true;
+                            Point p = new Point(Screen.PrimaryScreen.WorkingArea.Width - d.Width, Screen.PrimaryScreen.WorkingArea.Height - d.Height);
+                            d.PointToScreen(p);
+                            d.Location = p;
+                            d.Enabled = true;
+                            d.station = 6;
+                            d.Show();
+                        }
                     }
                 }
             }
         }
-
         private void textBox1_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (e.KeyChar == (char)Keys.Enter)
