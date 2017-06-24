@@ -17,8 +17,9 @@ namespace llibrary
         {
             InitializeComponent();
         }
-        public string pnum;
-
+        public int pnum;
+        public bool reader;
+        public string nsum;
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
 
@@ -49,16 +50,12 @@ namespace llibrary
             using (SqlConnection conn = new SqlConnection(strconn))
             {
                 conn.Open();
-                int i = 0;
                 SqlCommand dbquery = new SqlCommand();
                 dbquery.Connection = conn;
-                dbquery.CommandText = "select COUNT(*) from people where pname = '" + textBox1.Text + "' and code = '" + textBox2.Text + "'";
-                i = (int)dbquery.ExecuteScalar();
-                if (i >= 1)
-                {
-                    this.Hide();
-                }
-                else
+                dbquery.CommandText = "select pnum,reader,nsum from people where pname like '" + textBox1.Text + "[^charlist]%' and code like '" + textBox2.Text + "[^charlist]%'";
+                SqlDataReader dbreader = dbquery.ExecuteReader();
+                bool hasrow = dbreader.HasRows;
+                if (!hasrow)
                 {
                     signoutfail d = new signoutfail();
                     d.TopMost = true;
@@ -70,14 +67,30 @@ namespace llibrary
                     d.Show();
                     return;
                 }
+                dbreader.Read();
+                {
+                     pnum = dbreader.GetInt32(0);
+                     reader = dbreader.GetBoolean(1);
+                    if(reader)
+                    {
+                        nsum = dbreader.GetString(2);
+                        readermain b = new readermain(pnum,nsum);
+                        b.Show();
+                        Dispose();                //释放资源
+                        Close();
+                    }
+                    else
+                    {
+                        managermain r = new managermain(pnum);
+                        r.Show();
+                        Dispose();                //释放资源
+                        Close();
+                    }
+                }
             }
 
-            //managermain r = new managermain();
-            //r.Show();
-            readermain b = new readermain();
-            b.Show();
-            Dispose();                //释放资源
-            Close();
+
+
         }
 
         private void textBox1_KeyPress(object sender, KeyPressEventArgs e)

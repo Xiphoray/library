@@ -7,14 +7,17 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.SqlClient;
 
 namespace llibrary
 {
     public partial class managermain : Form
     {
-        public managermain()
+        public int pnum;
+        public managermain(int p)
         {
             InitializeComponent();
+            pnum = p;
         }
 
         public void allhide()

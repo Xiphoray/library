@@ -7,14 +7,19 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.SqlClient;
 
 namespace llibrary
 {
     public partial class readermain : Form
     {
-        public readermain()
+        public int pnum;
+        public string nsum;
+        public readermain(int p,string n)
         {
             InitializeComponent();
+            pnum = p;
+            nsum = n;
         }
 
         public void allhide()
