@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.SqlClient;
 
 namespace llibrary
 {
@@ -15,6 +16,7 @@ namespace llibrary
         public Form2()
         {
             InitializeComponent();
+
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -54,6 +56,62 @@ namespace llibrary
                 signoutfail1.station = 3;
                 signoutfail1.Show();
                 return;
+            }
+            else
+            {
+                string strconn = "Data source = XIPHORAY\\SQLEXPRESS;Initial Catalog = LIBRARY;Integrated Security = SSPI";
+                using (SqlConnection conn = new SqlConnection(strconn))
+                {
+                    conn.Open();
+                    int i = 0;
+                    SqlCommand dbquery = new SqlCommand();
+                    dbquery.Connection = conn;                         //插入数据（添增数据）
+                    string sql = "insert into people(pname,code,reader,brosum,nsum,csum) values('" + textBox1.Text + "','" + textBox2.Text + "','";
+                    sql += "1','0','0','4')";
+                    dbquery.CommandText = sql;
+                    i = dbquery.ExecuteNonQuery();
+                    if(i == 1)
+                    {
+                        signoutfail d = new signoutfail();
+                        d.TopMost = true;
+                        Point p = new Point(Screen.PrimaryScreen.WorkingArea.Width - d.Width, Screen.PrimaryScreen.WorkingArea.Height - d.Height);
+                        d.PointToScreen(p);
+                        d.Location = p;
+                        d.Enabled = true;
+                        d.station = 5;
+                        d.Show();
+                        Dispose();
+                        Close();
+                        return;
+                    }
+                    else
+                    {
+                        signoutfail d = new signoutfail();
+                        d.TopMost = true;
+                        Point p = new Point(Screen.PrimaryScreen.WorkingArea.Width - d.Width, Screen.PrimaryScreen.WorkingArea.Height - d.Height);
+                        d.PointToScreen(p);
+                        d.Location = p;
+                        d.Enabled = true;
+                        d.station = 6;
+                        d.Show();
+                    }
+                }
+            }
+        }
+
+        private void textBox1_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)Keys.Enter)
+            {
+                SendKeys.Send("{tab}");
+            }
+        }
+
+        private void textBox2_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)Keys.Enter)
+            {
+                SendKeys.Send("{tab}");
             }
         }
     }

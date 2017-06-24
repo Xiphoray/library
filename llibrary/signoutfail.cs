@@ -60,6 +60,18 @@ namespace llibrary
             {
                 label1.Text = "未输入密码";
             }
+            else if(station == 4)
+            {
+                label1.Text = "用户名或密码错误";
+            }
+            else if(station == 5)
+            {
+                label1.Text = "注册成功";
+            }
+            else if(station == 6)
+            {
+                label1.Text = "注册失败，请重试";
+            }
             timer1.Start();
         }
     }
