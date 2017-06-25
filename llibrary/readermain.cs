@@ -75,7 +75,7 @@ namespace llibrary
                 SqlCommand dbquery = new SqlCommand();
                 dbquery.Connection = conn;
                 if(e == 1)
-                    dbquery.CommandText = "select bname,writer,publish,serachtime,station,brosum from book where ISBN like '" + something + "[^charlist]%'";
+                    dbquery.CommandText = "select bname,writer,publish,serachtime,station,brosum from book where ISBN = '" + something + "'";
 
                 SqlDataReader dbreader = dbquery.ExecuteReader();
                 bool hasrow = dbreader.HasRows;
@@ -104,7 +104,7 @@ namespace llibrary
 
                     if(e == 1)
                     {
-                        infor d = new infor(sl1, sl2, sl3, something, sl4, sl6, sl5);
+                        infor d = new infor(sl1, sl2, sl3, something, sl4, sl6, sl5,pnum);
                         d.Show();
                     }
 
@@ -203,14 +203,14 @@ namespace llibrary
 
         private void button1_Click(object sender, EventArgs e)
         {
-            booksearch d = new booksearch(textBox1.Text);
+            booksearch d = new booksearch(textBox1.Text,pnum);
             d.Show();
 
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
-            writersearch d = new writersearch(textBox3.Text);
+            writersearch d = new writersearch(textBox3.Text,pnum);
             d.Show();
 
         }
@@ -258,7 +258,7 @@ namespace llibrary
                     i = (int)dbquery.ExecuteScalar();
                     if (i >= 1)
                     {
-                        dbquery.CommandText = "update book set pnum = '" + pnum.ToString() + "' where ISBN = '" + textBox4.Text + "'";       //更新数据
+                        dbquery.CommandText = "update book set pnum = '" + pnum.ToString() + "', station = 1 where ISBN = '" + textBox4.Text + "'";       //更新数据
                         dbquery.ExecuteNonQuery();
                         pershow();
                     }
@@ -303,8 +303,15 @@ namespace llibrary
                 i = (int)dbquery.ExecuteScalar();
                 if (i >= 1)
                 {
-                    dbquery.CommandText = "update book set pnum = '0' where ISBN = '" + textBox5.Text + "'";       //更新数据
+                    dbquery.CommandText = "select brosum from book where ISBN = '" + textBox5.Text + "'";
+                    SqlDataReader dbreader = dbquery.ExecuteReader();
+                    dbreader.Read();   
+                    int sl1;
+                    sl1 = Convert.ToInt32(dbreader.GetString(0)) + 1;
+                    dbreader.Close();
+                    dbquery.CommandText = "update book set pnum = '0', brosum = '" + sl1.ToString() + "', station = 0 where ISBN = '" + textBox5.Text + "'";       //更新数据
                     dbquery.ExecuteNonQuery();
+
                     pershow();
                 }
                 else
@@ -320,6 +327,25 @@ namespace llibrary
                 }
 
             }
+        }
+
+        private void dataGridView2_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+
+                string da;
+                da = dataGridView1.Rows[e.RowIndex].Cells[3].Value.ToString();
+                bosear(1, da);
+
+
+        }
+
+        private void dataGridView1_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+                string da;
+                da = dataGridView1.Rows[e.RowIndex].Cells[3].Value.ToString();
+                bosear(1, da);
+
         }
     }
 }
