@@ -13,6 +13,10 @@ namespace llibrary
 {
     public partial class readermain : Form
     {
+        private DataSet myset;
+        private SqlDataAdapter da;
+        //private SqlCommandBuilder myCbd;
+        BindingSource bing1;
         public int pnum;
         public string nsum;
         public readermain(int p,string n)
@@ -31,6 +35,37 @@ namespace llibrary
             groupBox5.Hide();
         }
 
+        public void pershow()
+        {
+            string strconn = "Data source = XIPHORAY\\SQLEXPRESS;Initial Catalog = LIBRARY;Integrated Security = SSPI";
+            string strsq1 = "select bname,writer,publish,ISBN from book,people where people.pnum like " + pnum.ToString() + " and book.pnum=people.pnum";
+            SqlConnection conn = new SqlConnection(strconn);
+            SqlCommand strCmd = new SqlCommand(strsq1, conn);
+            da = new SqlDataAdapter();
+            da.SelectCommand = strCmd;
+            myset = new DataSet();
+            bing1 = new BindingSource();
+            try
+            {
+                da.Fill(myset, "book");
+                bing1.DataSource = myset;
+                bing1.DataMember = "book";
+                bing1.Filter = "";
+                dataGridView1.DataSource = bing1;
+                dataGridView2.DataSource = bing1;
+            }
+            catch (SqlException ex)
+            {
+                signoutfail d = new signoutfail();
+                d.TopMost = true;
+                Point p = new Point(Screen.PrimaryScreen.WorkingArea.Width - d.Width, Screen.PrimaryScreen.WorkingArea.Height - d.Height);
+                d.PointToScreen(p);
+                d.Location = p;
+                d.Enabled = true;
+                d.station = 0;
+                d.Show();
+            }
+        }
         public void bosear(int e,string something)
         {
             string strconn = "Data source = XIPHORAY\\SQLEXPRESS;Initial Catalog = LIBRARY;Integrated Security = SSPI";
@@ -141,12 +176,14 @@ namespace llibrary
         private void 借书ToolStripMenuItem_Click(object sender, EventArgs e)
         {
             allhide();
+            pershow();
             groupBox4.Show();
         }
 
         private void 还书ToolStripMenuItem_Click(object sender, EventArgs e)
         {
             allhide();
+            pershow();
             groupBox5.Show();
         }
 
@@ -201,6 +238,87 @@ namespace llibrary
             if (e.KeyCode == Keys.Enter)//如果输入的是回车键  
             {
                 this.button3_Click(sender, e);//触发button事件  
+            }
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            string strconn = "Data source = XIPHORAY\\SQLEXPRESS;Initial Catalog = LIBRARY;Integrated Security = SSPI";
+            using (SqlConnection conn = new SqlConnection(strconn))
+            {
+                conn.Open();
+                int i,j;
+                SqlCommand dbquery = new SqlCommand();
+                dbquery.Connection = conn;
+                dbquery.CommandText = "select COUNT(*) from book where pnum = '" + pnum.ToString() + "'";
+                j = (int)dbquery.ExecuteScalar();
+                if (j < 4)
+                {
+                    dbquery.CommandText = "select COUNT(*) from book where ISBN = '" + textBox4.Text + "' and pnum = '0'";
+                    i = (int)dbquery.ExecuteScalar();
+                    if (i >= 1)
+                    {
+                        dbquery.CommandText = "update book set pnum = '" + pnum.ToString() + "' where ISBN = '" + textBox4.Text + "'";       //更新数据
+                        dbquery.ExecuteNonQuery();
+                        pershow();
+                    }
+                    else
+                    {
+                        signoutfail d = new signoutfail();
+                        d.TopMost = true;
+                        Point p = new Point(Screen.PrimaryScreen.WorkingArea.Width - d.Width, Screen.PrimaryScreen.WorkingArea.Height - d.Height);
+                        d.PointToScreen(p);
+                        d.Location = p;
+                        d.Enabled = true;
+                        d.station = 9;
+                        d.Show();
+                    }
+                }
+                else
+                {
+                    signoutfail d = new signoutfail();
+                    d.TopMost = true;
+                    Point p = new Point(Screen.PrimaryScreen.WorkingArea.Width - d.Width, Screen.PrimaryScreen.WorkingArea.Height - d.Height);
+                    d.PointToScreen(p);
+                    d.Location = p;
+                    d.Enabled = true;
+                    d.station = 9;
+                    d.Show();
+                }
+                    
+
+            }
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            string strconn = "Data source = XIPHORAY\\SQLEXPRESS;Initial Catalog = LIBRARY;Integrated Security = SSPI";
+            using (SqlConnection conn = new SqlConnection(strconn))
+            {
+                conn.Open();
+                int i = 0;
+                SqlCommand dbquery = new SqlCommand();
+                dbquery.Connection = conn;
+                dbquery.CommandText = "select COUNT(*) from book where ISBN = '" + textBox5.Text + "' and pnum = '" + pnum.ToString() + "'";
+                i = (int)dbquery.ExecuteScalar();
+                if (i >= 1)
+                {
+                    dbquery.CommandText = "update book set pnum = '0' where ISBN = '" + textBox5.Text + "'";       //更新数据
+                    dbquery.ExecuteNonQuery();
+                    pershow();
+                }
+                else
+                {
+                    signoutfail d = new signoutfail();
+                    d.TopMost = true;
+                    Point p = new Point(Screen.PrimaryScreen.WorkingArea.Width - d.Width, Screen.PrimaryScreen.WorkingArea.Height - d.Height);
+                    d.PointToScreen(p);
+                    d.Location = p;
+                    d.Enabled = true;
+                    d.station = 10;
+                    d.Show();
+                }
+
             }
         }
     }

@@ -80,6 +80,22 @@ namespace llibrary
             {
                 label1.Text = "书库内没有这本书";
             }
+            else if(station == 0)
+            {
+                label1.Text = "出错了";
+            }
+            else if(station == 9)
+            {
+                label1.Text = "该书不存在或已借出";
+            }
+            else if(station == 10)
+            {
+                label1.Text = "该书未借或不存在";
+            }
+            else if(station == 11)
+            {
+                label1.Text = "借书已满4本";
+            }
             timer1.Start();
         }
     }
