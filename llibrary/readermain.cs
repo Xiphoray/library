@@ -38,7 +38,7 @@ namespace llibrary
         public void pershow()
         {
             string strconn = "Data source = XIPHORAY\\SQLEXPRESS;Initial Catalog = LIBRARY;Integrated Security = SSPI";
-            string strsq1 = "select bname,writer,publish,ISBN from book,people where people.pnum like " + pnum.ToString() + " and book.pnum=people.pnum";
+            string strsq1 = "select bname as 书名,writer as 作者,publish as 出版社,ISBN as ISBN号 from book,people where people.pnum = " + pnum.ToString() + " and book.pnum=people.pnum";
             SqlConnection conn = new SqlConnection(strconn);
             SqlCommand strCmd = new SqlCommand(strsq1, conn);
             da = new SqlDataAdapter();

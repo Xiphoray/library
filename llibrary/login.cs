@@ -52,7 +52,7 @@ namespace llibrary
                 conn.Open();
                 SqlCommand dbquery = new SqlCommand();
                 dbquery.Connection = conn;
-                dbquery.CommandText = "select pnum,reader,nsum from people where pname like '" + textBox1.Text + "[^charlist]%' and code like '" + textBox2.Text + "[^charlist]%'";
+                dbquery.CommandText = "select pnum,reader,nsum from people where pname = '" + textBox1.Text + "' and code = '" + textBox2.Text + "'";
                 SqlDataReader dbreader = dbquery.ExecuteReader();
                 bool hasrow = dbreader.HasRows;
                 if (!hasrow)

@@ -25,7 +25,7 @@ namespace llibrary
             pnum = pn;
             label2.Text = something;
             string strconn = "Data source = XIPHORAY\\SQLEXPRESS;Initial Catalog = LIBRARY;Integrated Security = SSPI";
-            string strsq1 = "select bname,writer,publish,ISBN from book where bname like '" + something + "%'" ;
+            string strsq1 = "select bname as 书名,writer as 作者,publish as 出版社,ISBN as ISBN号 from book where bname like '" + something + "%'" ;
             SqlConnection conn = new SqlConnection(strconn);
             SqlCommand strCmd = new SqlCommand(strsq1, conn);
             da = new SqlDataAdapter();

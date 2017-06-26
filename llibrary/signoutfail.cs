@@ -96,6 +96,50 @@ namespace llibrary
             {
                 label1.Text = "借书已满4本";
             }
+            else if(station == 12)
+            {
+                label1.Text = "输入不允许为空";
+            }
+            else if(station == 13)
+            {
+                label1.Text = "输入过长";
+            }
+            else if(station == 14)
+            {
+                label1.Text = "添增新书成功";
+            }
+            else if(station == 15)
+            {
+                label1.Text = "添增新书有误";
+            }
+            else if(station == 16)
+            {
+                label1.Text = "该书已存在";
+            }
+            else if(station == 17)
+            {
+                label1.Text = "删除成功";
+            }
+            else if(station == 18)
+            {
+                label1.Text = "删除有误";
+            }
+            else if(station == 19)
+            {
+                label1.Text = "ISBN号未填写";
+            }
+            else if (station == 20)
+            {
+                label1.Text = "更新成功";
+            }
+            else if(station == 21)
+            {
+                label1.Text = "更新有误";
+            }
+            else if(station == 22)
+            {
+                label1.Text = "该用户有书未还\n无法删除";
+            }
             timer1.Start();
         }
     }

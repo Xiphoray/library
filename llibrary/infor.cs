@@ -57,7 +57,7 @@ namespace llibrary
                     d.PointToScreen(p);
                     d.Location = p;
                     d.Enabled = true;
-                    d.station = 9;
+                    d.station = 11;
                     d.Show();
                 }
 
@@ -67,6 +67,7 @@ namespace llibrary
 
         public int ser;
         public bool station;
+        public int m = 0;
         public infor(string bn, string wr, string pu, string IS, string se, string br, bool st,int pn)
         {
             InitializeComponent();
@@ -107,7 +108,10 @@ namespace llibrary
             else
             {
                 label15.Text = "可借";
-                button1.Show();
+                if (m == 1)
+                    button1.Hide();
+                else
+                    button1.Show();
             }
 
             qrCodeGraphicControl1.Text = "https://book.douban.com/subject_search?search_text=" + ISBN;
