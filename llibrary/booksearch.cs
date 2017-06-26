@@ -103,8 +103,12 @@ namespace llibrary
         private void dataGridView1_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
         {
             string da;
-            da = dataGridView1.Rows[e.RowIndex].Cells[3].Value.ToString();
-            bosear(1, da);
+            if(e.RowIndex>-1)
+            {
+                da = dataGridView1.Rows[e.RowIndex].Cells[3].Value.ToString();
+                bosear(1, da);
+            }
+
         }
     }
 }

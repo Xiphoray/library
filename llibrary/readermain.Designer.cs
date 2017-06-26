@@ -156,14 +156,14 @@
             // 借书ToolStripMenuItem
             // 
             this.借书ToolStripMenuItem.Name = "借书ToolStripMenuItem";
-            this.借书ToolStripMenuItem.Size = new System.Drawing.Size(100, 22);
+            this.借书ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.借书ToolStripMenuItem.Text = "借书";
             this.借书ToolStripMenuItem.Click += new System.EventHandler(this.借书ToolStripMenuItem_Click);
             // 
             // 还书ToolStripMenuItem
             // 
             this.还书ToolStripMenuItem.Name = "还书ToolStripMenuItem";
-            this.还书ToolStripMenuItem.Size = new System.Drawing.Size(100, 22);
+            this.还书ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.还书ToolStripMenuItem.Text = "还书";
             this.还书ToolStripMenuItem.Click += new System.EventHandler(this.还书ToolStripMenuItem_Click);
             // 
@@ -472,11 +472,11 @@
             this.ClientSize = new System.Drawing.Size(734, 424);
             this.Controls.Add(this.menuStrip1);
             this.Controls.Add(this.statusStrip1);
-            this.Controls.Add(this.groupBox5);
-            this.Controls.Add(this.groupBox4);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox3);
+            this.Controls.Add(this.groupBox5);
+            this.Controls.Add(this.groupBox4);
             this.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));

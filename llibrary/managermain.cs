@@ -316,7 +316,7 @@ namespace llibrary
                 SqlCommand dbquery = new SqlCommand();
                 dbquery.Connection = conn;
 
-                dbquery.CommandText = "select COUNT(*) from book where pnum = '" + dataGridView1.Rows[chooser].Cells[choosec].Value + "'";
+                dbquery.CommandText = "select COUNT(*) from book where pnum = '" + dataGridView1.Rows[chooser].Cells[0].Value + "'";
                 j = (int)dbquery.ExecuteScalar();
                 if (j >= 1)
                 {
@@ -332,8 +332,8 @@ namespace llibrary
                 }
                 else
                 {
-                    dbquery.CommandText = "delete from people where pnum ='" + dataGridView1.Rows[chooser].Cells[choosec].Value + "'";
-                    i = dbquery.ExecuteNonQuery();
+                    dbquery.CommandText = "delete from people where pnum ='" + dataGridView1.Rows[chooser].Cells[0].Value + "'";
+                    i = (int)dbquery.ExecuteNonQuery();
                     if (i == 1)
                     {
                         signoutfail d = new signoutfail();

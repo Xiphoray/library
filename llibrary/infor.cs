@@ -32,7 +32,25 @@ namespace llibrary
                     i = (int)dbquery.ExecuteScalar();
                     if (i >= 1)
                     {
-                        dbquery.CommandText = "update book set pnum = '" + pnum.ToString() + "', station = 1 where ISBN = '" + ISBN+ "'";       //更新数据
+
+                        dbquery.CommandText = "select brosum from book where ISBN = '" + ISBN + "'";
+                        SqlDataReader dbreader = dbquery.ExecuteReader();
+                        dbreader.Read();
+                        int sl1;
+                        sl1 = Convert.ToInt32(dbreader.GetString(0)) + 1;
+                        dbreader.Close();
+                        dbquery.CommandText = "update book set pnum = '" + pnum.ToString() + "', brosum = '" + sl1.ToString() + "', station = 1 where ISBN = '" + ISBN + "'";       //更新数据
+                        dbquery.ExecuteNonQuery();
+
+
+                        dbquery.CommandText = "select brosum,nsum from people where pnum = '" + pnum + "'";
+                        SqlDataReader dbreader1 = dbquery.ExecuteReader();
+                        dbreader1.Read();
+                        int sl3,sl2;
+                        sl3 = Convert.ToInt32(dbreader1.GetString(0)) + 1;
+                        sl2 = Convert.ToInt32(dbreader1.GetString(1)) + 1;
+                        dbreader1.Close();
+                        dbquery.CommandText = "update people set brosum = '" + sl3.ToString() + "', nsum = '" + sl2.ToString() + "' where pnum = '" + pnum + "'";       //更新数据
                         dbquery.ExecuteNonQuery();
                         button1.Hide();
                         label15.Text = "已借出";

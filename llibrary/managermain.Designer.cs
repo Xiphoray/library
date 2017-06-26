@@ -116,14 +116,14 @@
             // 添增新书ToolStripMenuItem
             // 
             this.添增新书ToolStripMenuItem.Name = "添增新书ToolStripMenuItem";
-            this.添增新书ToolStripMenuItem.Size = new System.Drawing.Size(124, 22);
+            this.添增新书ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.添增新书ToolStripMenuItem.Text = "添增新书";
             this.添增新书ToolStripMenuItem.Click += new System.EventHandler(this.添增新书ToolStripMenuItem_Click);
             // 
             // 删减旧书ToolStripMenuItem
             // 
             this.删减旧书ToolStripMenuItem.Name = "删减旧书ToolStripMenuItem";
-            this.删减旧书ToolStripMenuItem.Size = new System.Drawing.Size(124, 22);
+            this.删减旧书ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.删减旧书ToolStripMenuItem.Text = "删除旧书";
             this.删减旧书ToolStripMenuItem.Click += new System.EventHandler(this.删减旧书ToolStripMenuItem_Click);
             // 
@@ -163,21 +163,21 @@
             // 登出ToolStripMenuItem
             // 
             this.登出ToolStripMenuItem.Name = "登出ToolStripMenuItem";
-            this.登出ToolStripMenuItem.Size = new System.Drawing.Size(124, 22);
+            this.登出ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.登出ToolStripMenuItem.Text = "登出";
             this.登出ToolStripMenuItem.Click += new System.EventHandler(this.登出ToolStripMenuItem_Click);
             // 
             // 退出系统ToolStripMenuItem
             // 
             this.退出系统ToolStripMenuItem.Name = "退出系统ToolStripMenuItem";
-            this.退出系统ToolStripMenuItem.Size = new System.Drawing.Size(124, 22);
+            this.退出系统ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.退出系统ToolStripMenuItem.Text = "退出系统";
             this.退出系统ToolStripMenuItem.Click += new System.EventHandler(this.退出系统ToolStripMenuItem_Click);
             // 
             // 关于ToolStripMenuItem
             // 
             this.关于ToolStripMenuItem.Name = "关于ToolStripMenuItem";
-            this.关于ToolStripMenuItem.Size = new System.Drawing.Size(124, 22);
+            this.关于ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.关于ToolStripMenuItem.Text = "关于";
             this.关于ToolStripMenuItem.Click += new System.EventHandler(this.关于ToolStripMenuItem_Click);
             // 
@@ -523,20 +523,20 @@
             this.刷新ToolStripMenuItem,
             this.删除ToolStripMenuItem});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(153, 70);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(101, 48);
             this.contextMenuStrip1.Closing += new System.Windows.Forms.ToolStripDropDownClosingEventHandler(this.contextMenuStrip1_Closing);
             // 
             // 刷新ToolStripMenuItem
             // 
             this.刷新ToolStripMenuItem.Name = "刷新ToolStripMenuItem";
-            this.刷新ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.刷新ToolStripMenuItem.Size = new System.Drawing.Size(100, 22);
             this.刷新ToolStripMenuItem.Text = "刷新";
             this.刷新ToolStripMenuItem.Click += new System.EventHandler(this.刷新ToolStripMenuItem_Click);
             // 
             // 删除ToolStripMenuItem
             // 
             this.删除ToolStripMenuItem.Name = "删除ToolStripMenuItem";
-            this.删除ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.删除ToolStripMenuItem.Size = new System.Drawing.Size(100, 22);
             this.删除ToolStripMenuItem.Text = "删除";
             this.删除ToolStripMenuItem.Click += new System.EventHandler(this.删除ToolStripMenuItem_Click);
             // 
@@ -545,12 +545,12 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(734, 424);
-            this.Controls.Add(this.groupBox4);
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.menuStrip1);
-            this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.groupBox3);
+            this.Controls.Add(this.groupBox4);
+            this.Controls.Add(this.groupBox2);
             this.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
