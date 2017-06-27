@@ -79,6 +79,12 @@
     <Compile Include="booksearch.Designer.cs">
       <DependentUpon>booksearch.cs</DependentUpon>
     </Compile>
+    <Compile Include="changecode.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="changecode.Designer.cs">
+      <DependentUpon>changecode.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -134,6 +140,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="booksearch.resx">
       <DependentUpon>booksearch.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="changecode.resx">
+      <DependentUpon>changecode.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>

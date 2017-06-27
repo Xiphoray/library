@@ -364,5 +364,11 @@ namespace llibrary
                 bosear(1, da);
 
         }
+
+        private void 更改密码ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            changecode d = new changecode(pnum);
+            d.Show();
+        }
     }
 }

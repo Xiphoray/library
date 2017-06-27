@@ -140,6 +140,18 @@ namespace llibrary
             {
                 label1.Text = "该用户有书未还\n无法删除";
             }
+            else if(station == 23)
+            {
+                label1.Text = "原密码错误";
+            }
+            else if(station == 24)
+            {
+                label1.Text = "重新输入有误";
+            }
+            else if (station == 25)
+            {
+                label1.Text = "密码修改成功";
+            }
             timer1.Start();
         }
     }

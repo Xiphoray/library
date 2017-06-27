@@ -70,6 +70,7 @@
             this.button5 = new System.Windows.Forms.Button();
             this.textBox5 = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
+            this.更改密码ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.statusStrip1.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -156,20 +157,21 @@
             // 借书ToolStripMenuItem
             // 
             this.借书ToolStripMenuItem.Name = "借书ToolStripMenuItem";
-            this.借书ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.借书ToolStripMenuItem.Size = new System.Drawing.Size(100, 22);
             this.借书ToolStripMenuItem.Text = "借书";
             this.借书ToolStripMenuItem.Click += new System.EventHandler(this.借书ToolStripMenuItem_Click);
             // 
             // 还书ToolStripMenuItem
             // 
             this.还书ToolStripMenuItem.Name = "还书ToolStripMenuItem";
-            this.还书ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.还书ToolStripMenuItem.Size = new System.Drawing.Size(100, 22);
             this.还书ToolStripMenuItem.Text = "还书";
             this.还书ToolStripMenuItem.Click += new System.EventHandler(this.还书ToolStripMenuItem_Click);
             // 
             // 设置ToolStripMenuItem
             // 
             this.设置ToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.更改密码ToolStripMenuItem,
             this.登出ToolStripMenuItem,
             this.退出系统ToolStripMenuItem,
             this.关于ToolStripMenuItem});
@@ -180,21 +182,21 @@
             // 登出ToolStripMenuItem
             // 
             this.登出ToolStripMenuItem.Name = "登出ToolStripMenuItem";
-            this.登出ToolStripMenuItem.Size = new System.Drawing.Size(124, 22);
+            this.登出ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.登出ToolStripMenuItem.Text = "登出";
             this.登出ToolStripMenuItem.Click += new System.EventHandler(this.登出ToolStripMenuItem_Click);
             // 
             // 退出系统ToolStripMenuItem
             // 
             this.退出系统ToolStripMenuItem.Name = "退出系统ToolStripMenuItem";
-            this.退出系统ToolStripMenuItem.Size = new System.Drawing.Size(124, 22);
+            this.退出系统ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.退出系统ToolStripMenuItem.Text = "退出系统";
             this.退出系统ToolStripMenuItem.Click += new System.EventHandler(this.退出系统ToolStripMenuItem_Click);
             // 
             // 关于ToolStripMenuItem
             // 
             this.关于ToolStripMenuItem.Name = "关于ToolStripMenuItem";
-            this.关于ToolStripMenuItem.Size = new System.Drawing.Size(124, 22);
+            this.关于ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.关于ToolStripMenuItem.Text = "关于";
             this.关于ToolStripMenuItem.Click += new System.EventHandler(this.关于ToolStripMenuItem_Click);
             // 
@@ -465,6 +467,13 @@
             this.label10.TabIndex = 3;
             this.label10.Text = "ISBN号";
             // 
+            // 更改密码ToolStripMenuItem
+            // 
+            this.更改密码ToolStripMenuItem.Name = "更改密码ToolStripMenuItem";
+            this.更改密码ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.更改密码ToolStripMenuItem.Text = "更改密码";
+            this.更改密码ToolStripMenuItem.Click += new System.EventHandler(this.更改密码ToolStripMenuItem_Click);
+            // 
             // readermain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
@@ -550,5 +559,6 @@
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.TextBox textBox5;
         private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.ToolStripMenuItem 更改密码ToolStripMenuItem;
     }
 }
